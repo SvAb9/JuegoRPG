@@ -9,7 +9,6 @@ public class PersonajeMagoBuilder implements BuilderPersonaje {
     private String habilidad1;
     private String habilidad2;
     private String habilidad3;
-    private String tipo;
     
     private PersonajeMagoBuilder() {}
 
@@ -47,14 +46,9 @@ public class PersonajeMagoBuilder implements BuilderPersonaje {
         this.habilidad3 = habilidad3;
         return this;
     }
-    
-    public PersonajeMagoBuilder tipo(String tipo) {
-        this.tipo = "Mago";
-        return this;
-    }
 
-    public Personaje build() {
-        return new Personaje(nombre, descripcion, apodo, dineroInicial, habilidad1, habilidad2, habilidad3, tipo);
+    public Mago build() {
+        return new Mago(nombre, descripcion, apodo, dineroInicial, habilidad1, habilidad2, habilidad3);
     }
 }
 
