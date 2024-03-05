@@ -13,17 +13,17 @@ public class Main {
 
         // Construir un mago
         director.construirMago("Merlín", "Poderoso mago", "El Sabio", 100.0f, 10, 8, 5);
-        Mago mago = director.obtenerMago();
+        Personaje mago = director.obtenerMago();
         System.out.println("Mago creado: " + mago.getNombre());
 
         // Construir un arquero
-        director.construirArquero("Legolas", "Elfo arquero", "El de los ojos de águila", 150.0f, "Disparo Rápido", "Flecha Venenosa", "Tiro Certero");
-        Arquero arquero = director.obtenerArquero();
+        director.construirArquero("Legolas", "Elfo arquero", "El de los ojos de águila", 150.0f, 10, 20, 30);
+        Personaje arquero = director.obtenerArquero();
         System.out.println("Arquero creado: " + arquero.getNombre());
 
         // Construir un guerrero
         director.construirGuerrero("Conan", "Poderoso guerrero bárbaro", "El Destructor", 200.0f, 15, 12, 20);
-        Guerrero guerrero = director.obtenerGuerrero();
+        Personaje guerrero = director.obtenerGuerrero();
         System.out.println("Guerrero creado: " + guerrero.getNombre());
     }
 }
