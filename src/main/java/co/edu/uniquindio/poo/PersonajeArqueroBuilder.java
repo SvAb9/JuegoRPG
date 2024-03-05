@@ -6,12 +6,12 @@ public class PersonajeArqueroBuilder implements BuilderPersonaje {
     private String descripcion;
     private String apodo;
     private float dineroInicial;
-    private String habilidad1;
-    private String habilidad2;
-    private String habilidad3;
-    private String tipo;
+    private int disparoRapido;
+    private int flechaVenenosa;
+    private int tiroCertero;
 
-    private PersonajeArqueroBuilder() {}
+    public PersonajeArqueroBuilder() {}
+
 
     public PersonajeArqueroBuilder nombre(String nombre) {
         this.nombre = nombre;
@@ -33,27 +33,22 @@ public class PersonajeArqueroBuilder implements BuilderPersonaje {
         return this;
     }
 
-    public PersonajeArqueroBuilder habilidad1(String habilidad1) {
-        this.habilidad1 = habilidad1;
+    public PersonajeArqueroBuilder habilidad1(int disparoRapido) {
+        this.disparoRapido= disparoRapido;
         return this;
     }
 
-    public PersonajeArqueroBuilder habilidad2(String habilidad2) {
-        this.habilidad2 = habilidad2;
+    public PersonajeArqueroBuilder habilidad2(int flechaVenenosa) {
+        this.flechaVenenosa = flechaVenenosa;
         return this;
     }
 
-    public PersonajeArqueroBuilder habilidad3(String habilidad3) {
-        this.habilidad3 = habilidad3;
-        return this;
-    }
-    
-    public PersonajeArqueroBuilder tipo() {
-        this.tipo = "arquero"; // Establecer el tipo como "arquero"
+    public PersonajeArqueroBuilder habilidad3(int tiroCertero) {
+        this.tiroCertero = tiroCertero;
         return this;
     }
 
     public Personaje build() {
-        return new Personaje(nombre, descripcion, apodo, dineroInicial, habilidad1, habilidad2, habilidad3, tipo);
+        return new Personaje (nombre, descripcion, apodo, dineroInicial, disparoRapido, flechaVenenosa, tiroCertero);
     }
 }

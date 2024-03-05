@@ -12,18 +12,48 @@ public class Jugador {
         listaPersonajes = new ArrayList<>();
     }
 
-    public void adicionarMago(String nombre, String descripcion, String apodo, float dineroInicial, String habilidad1, String habilidad2, String habilidad3) {
-        Personaje mago = director.builderMago(nombre, descripcion, apodo, dineroInicial, habilidad1, habilidad2, habilidad3);
-        listaPersonajes.add(mago);
+    public void adicionarMago(String nombre, String descripcion, String apodo, float dineroInicial, int bolaFuego, int rayoElectrico, int hechizoCuracion) {
+        
+        PersonajeMagoBuilder builder = new PersonajeMagoBuilder()
+        .nombre(nombre)
+        .descripcion(descripcion)
+        .apodo(apodo)
+        .dineroInicial(dineroInicial)
+        .habilidad1(bolaFuego)
+        .habilidad2(rayoElectrico)
+        .habilidad3(hechizoCuracion);
+    
+        Personaje nuevoMago = builder.build();
+        listaPersonajes.add(nuevoMago);
+    }
+    
+    public void adicionarArquero (String nombre, String descripcion, String apodo, float dineroInicial, int disparoRapido, int flechaVenenosa, int tiroCertero){
+        PersonajeArqueroBuilder builder = new PersonajeArqueroBuilder()
+        .nombre(nombre)
+        .descripcion(descripcion)
+        .apodo(apodo)
+        .dineroInicial(dineroInicial)
+        .habilidad1(disparoRapido)
+        .habilidad2(flechaVenenosa)
+        .habilidad3(tiroCertero);
+
+        Personaje nuevoArquero = builder.build();
+        listaPersonajes.add(nuevoArquero);
+
     }
 
-    public void adicionarArquero(String nombre, String descripcion, String apodo, float dineroInicial, String habilidad1, String habilidad2, String habilidad3) {
-        Personaje arquero = director.builderArquero(nombre, descripcion, apodo, dineroInicial, habilidad1, habilidad2, habilidad3);
-        listaPersonajes.add(arquero);
-    }
+    public void adicionarGuerrero (String nombre, String descripcion, String apodo, float dineroInicial, int espadaAfilada, int golpeDefinitivo, int escudoProtector){
+        PersonajeArqueroBuilder builder = new PersonajeArqueroBuilder()
+        .nombre(nombre)
+        .descripcion(descripcion)
+        .apodo(apodo)
+        .dineroInicial(dineroInicial)
+        .habilidad1(espadaAfilada)
+        .habilidad2(golpeDefinitivo)
+        .habilidad3(escudoProtector);
 
-    public void adicionarGuerrero(String nombre, String descripcion, String apodo, float dineroInicial, String habilidad1, String habilidad2, String habilidad3) {
-        Personaje guerrero = director.builderGuerrero(nombre, descripcion, apodo, dineroInicial, habilidad1, habilidad2, habilidad3);
-        listaPersonajes.add(guerrero);
+        Personaje nuevoGuerrero = builder.build();
+        listaPersonajes.add(nuevoGuerrero);
+
     }
 }

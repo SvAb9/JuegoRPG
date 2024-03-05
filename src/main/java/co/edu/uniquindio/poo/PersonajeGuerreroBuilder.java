@@ -1,16 +1,21 @@
 package co.edu.uniquindio.poo;
 
+// ConcreteBuilder para construir guerreros
 public class PersonajeGuerreroBuilder implements BuilderPersonaje {
 
     private String nombre;
     private String descripcion;
     private String apodo;
     private float dineroInicial;
-    private String habilidad1;
-    private String habilidad2;
-    private String habilidad3;
-    
-    private PersonajeGuerreroBuilder() {}
+    private int espadaAfilada;
+    private int golpeDefinitivo;
+    private int escudoProtector;
+
+    public PersonajeGuerreroBuilder() {}
+
+    public static PersonajeGuerreroBuilder builder() {
+        return new PersonajeGuerreroBuilder();
+    }
 
     public PersonajeGuerreroBuilder nombre(String nombre) {
         this.nombre = nombre;
@@ -26,28 +31,28 @@ public class PersonajeGuerreroBuilder implements BuilderPersonaje {
         this.apodo = apodo;
         return this;
     }
-    
+
     public PersonajeGuerreroBuilder dineroInicial(float dineroInicial) {
         this.dineroInicial = dineroInicial;
         return this;
     }
 
-    public PersonajeGuerreroBuilder habilidad1(String habilidad1) {
-        this.habilidad1 = habilidad1;
+    public PersonajeGuerreroBuilder habilidad1(int espadaAfilada) {
+        this.espadaAfilada = espadaAfilada;
         return this;
     }
 
-    public PersonajeGuerreroBuilder habilidad2(String habilidad2) {
-        this.habilidad2 = habilidad2;
+    public PersonajeGuerreroBuilder habilidad2(int golpeDefinitivo) {
+        this.golpeDefinitivo = golpeDefinitivo;
         return this;
     }
 
-    public PersonajeGuerreroBuilder habilidad3(String habilidad3) {
-        this.habilidad3 = habilidad3;
+    public PersonajeGuerreroBuilder habilidad3(int escudoProtector) {
+        this.escudoProtector = escudoProtector;
         return this;
     }
 
     public Personaje build() {
-        return new Personaje(nombre, descripcion, apodo, dineroInicial, habilidad1, habilidad2, habilidad3);
+        return new Personaje (nombre, descripcion, apodo, dineroInicial, espadaAfilada, golpeDefinitivo, escudoProtector);
     }
 }
