@@ -49,6 +49,9 @@ public class PersonajeArqueroBuilder implements BuilderPersonaje {
     }
 
     public Personaje build() {
+        if (disparoRapido < 0 || flechaVenenosa < 0 || tiroCertero < 0){
+            throw new IllegalStateException("Los atributos de Arquero no pueden ser cero");
+        }
         return new Personaje (nombre, descripcion, apodo, dineroInicial, disparoRapido, flechaVenenosa, tiroCertero);
     }
 }
