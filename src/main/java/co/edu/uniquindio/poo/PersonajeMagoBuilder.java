@@ -48,6 +48,9 @@ public class PersonajeMagoBuilder implements BuilderPersonaje {
     }
 
     public Personaje build() {
+        if (bolaFuego < 0 || rayoElectrico < 0 || hechizoCuracion < 0){
+            throw new IllegalStateException ("Los atributos de Mago no pueden ser cero");
+        }
         return new Personaje(nombre, descripcion, apodo, dineroInicial, bolaFuego, rayoElectrico, hechizoCuracion);
     }
 

@@ -53,6 +53,11 @@ public class PersonajeGuerreroBuilder implements BuilderPersonaje {
     }
 
     public Personaje build() {
-        return new Personaje (nombre, descripcion, apodo, dineroInicial, espadaAfilada, golpeDefinitivo, escudoProtector);
+        // Realizar verificación de atributos aquí
+        if (espadaAfilada < 0 || golpeDefinitivo < 0 || escudoProtector < 0) {
+            throw new IllegalStateException("Los atributos de Mago no pueden ser cero");
+        }
+        
+        return new Personaje(nombre, descripcion, apodo, dineroInicial, espadaAfilada, golpeDefinitivo, escudoProtector);
     }
 }
